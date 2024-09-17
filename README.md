@@ -28,6 +28,8 @@ e.	Pour Jug A to Jug B: Calculate the new state based on how much can be poured.
 f.	Pour Jug B to Jug A: Similarly, calculate the new state.
 7. Maintain a set to keep track of visited states to avoid processing the same state multiple times.
 8. If the queue becomes empty without finding a solution, print that no solution exists.
+9. ![water jug AI](https://github.com/user-attachments/assets/c2f5b7a6-4578-405d-bf69-081c58bcbbba)
+
 
 
 Crypto arithmetic:
@@ -42,6 +44,8 @@ Algorithm:
 8. Substitute the digits into the original equation to see if it holds true. Ensure that all digits are unique and follow the puzzle’s constraints.
 9. If the trial doesn’t work, adjust the digit assignments and try again keep refining the approach based on results and logical deductions.
 10. Once you find a solution, verify it by substituting all letters with their corresponding digits in the original equation ensure that there are no violations of constraints.
+11. ![crypto arithmetic](https://github.com/user-attachments/assets/cab760ab-37da-420f-9e6e-d6faca8c4fd8)
+
 
 
 Breadth first search:
@@ -53,6 +57,8 @@ Algorithm:
 5. While the queue is not empty, dequeue a node from the front.
 6. If this node hasn't been visited mark it as visited and add it to traversal_ order. Enqueue all its unvisited neighbours.
 7.Return the traversal_ order list, which contains nodes in the order they were visited.
+![BFS AI](https://github.com/user-attachments/assets/4f752913-e7f3-4b3f-93ce-d4b7ee2b7fcc)
+
 
 
 Depth first Search:
@@ -67,6 +73,8 @@ Algorithm:
 	If the node is not in visited:
 7. Mark it as visited. Append it to traversal_ order. Push all unvisited neighbors of the node onto the stack .
 8. Return the traversal_order list.
+9. ![DFS AI](https://github.com/user-attachments/assets/d5788872-38e5-48cf-a0b4-b386f2349ca1)
+
 
 
 A*
@@ -102,6 +110,7 @@ o	f_cost of the start node to its h_cost.
 	If the Open Set becomes empty without finding the goal, report that there is no path.
 3.Path Reconstruction:
 •	Once the goal node is reached, reconstruct the path from the start node to the goal node by following parent pointers from the goal node back to the start node.
+![A AI](https://github.com/user-attachments/assets/69d8a911-446f-48cc-a639-573ce9fecf1a)
 
 
 Graph colouring:
@@ -120,6 +129,7 @@ If all nodes are colored successfully, return the color assignments. If no solut
 The algorithm terminates when either:
 All nodes are successfully assigned colors (in which case, a valid coloring is found).
 No valid color assignments are possible, meaning the map cannot be colored with the given number of colors.
+![Uploading graph colouring.jpeg…]()
 
 
 
