@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/01906d22-ab08-4e88-a51b-51b078342014)8 Queens problem:
+8 Queens problem:
 Algorithm:
 1. Create an 8x8 chessboard. Start with the first row and no queens placed on the board for each column in the current row, try to place a queen.
 2. For each placement, check if placing a queen in the current column of the current row is valid.
