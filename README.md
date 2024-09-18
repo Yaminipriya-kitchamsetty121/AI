@@ -1,4 +1,4 @@
-8 Queens problem:
+![image](https://github.com/user-attachments/assets/01906d22-ab08-4e88-a51b-51b078342014)8 Queens problem:
 Algorithm:
 1. Create an 8x8 chessboard. Start with the first row and no queens placed on the board for each column in the current row, try to place a queen.
 2. For each placement, check if placing a queen in the current column of the current row is valid.
@@ -89,7 +89,7 @@ Algorithm:
 
 
 
-A*
+A*:
 Algorithm:
 1. Initialize the Open Set with the start node and the Closed Set as empty.
 2. Loop until the Open Set is empty or the goal is found:
@@ -166,5 +166,48 @@ o	Recursive Case:
                             c. Print the minimum cost and the best path found.
 
 ![tsp AI](https://github.com/user-attachments/assets/2cb2ff91-bbd4-4c2d-8b8b-d3047a62f637)
+
+
+
+
+
+
+
+
+
+Tic_Tac-Toe:
+Algorithm:
+1. Initialize the game board (3x3 grid) with empty spaces.
+2. Create a loop to alternate between players' turns until the game ends.
+3. Display the current game board.
+4. Prompt the current player for their move (row and column).
+5. Check if the selected cell is empty. If not, ask the player to choose again.
+6. Update the selected cell with the player's symbol (X or O).
+7. Check for a win condition: 3 symbols in a row, column, or diagonal.
+8. If a win is detected, declare the current player as the winner.
+9. If the board is full and no win is detected, declare a tie.
+10. End the game loop.
+![TTT AI](https://github.com/user-attachments/assets/7220e82f-ff61-49ea-a23e-daed3239f5fb)
+
+
+
+
+
+
+
+
+Decision Tree:
+Alogorithm:
+1.start the program.
+2. To divide the data based on target variables, choose the best feature employing Attribute   Selection Measures (ASM).
+3. Then it will divide the dataset into smaller sub-datasets and designate that feature as a decision node for that branch.
+4. Once one of the conditions matches, the procedure is repeated recursively for every child node to begin creating the tree.
+5. The identical property value applies to each of the tuples.
+               ->There aren't any more qualities left.
+                ->There aren't any more occurrences.
+![Uploading DT AI.jpg…]()
+
+
+
 
 
