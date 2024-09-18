@@ -91,15 +91,17 @@ Algorithm:
 
 A*
 Algorithm:
-1. Start at a given position on the grid.
-2. If the current cell is dirty, clean it.
-3. Choose the next cell to move to. Options include:
-4. Move to the nearest dirty cell.
-5. Move in a specific pattern (e.g., zig-zag) to ensure coverage.
-6. Use a combination of both strategies for optimal cleaning.
-7. Move the vacuum cleaner to the chosen cell.
-8. Go back to step 2 until all cells are clean.
+1. Initialize the Open Set with the start node and the Closed Set as empty.
+2. Loop until the Open Set is empty or the goal is found:
+3. Get the node with the lowest f value from the Open Set.
+4. If it's the goal, reconstruct and return the path.
+5. Otherwise, move it to the Closed Set.
+6. For each neighbour, calculate the g, h, and f values, and update as needed.
+7. Return the path if the goal is reached, otherwise indicate that no path exists.
 ![A AI](https://github.com/user-attachments/assets/69d8a911-446f-48cc-a639-573ce9fecf1a)
+
+
+
 
 
 
@@ -107,12 +109,62 @@ Algorithm:
 
 Map colouring:
 Algorithm:
-1.Start from the initial node and enqueue it into the queue.
-2.While the queue is not empty, dequeue a node and process it.
-3.Enqueue all unvisited neighbors of the dequeued node.
-4.Repeat steps 2 and 3 until the queue is empty.
+1. Define the number of colours available 
+2. Create a graph representation of the map using an adjacency list or matrix.
+3. Initialize a list or array to store the colours assigned to each region.
+4. Define a function is_ safe that checks if assigning a given colour to a node is valid:
+                    ->For each adjacent node of the current node, check if any have the same colour.
+                    ->If any adjacent node has the same colour, return False. Otherwise, return True.
+5. Define a recursive function map_ colouring that:
+1.	Base Case:
+	If all nodes have been assigned a colour, return True (solution found).
+2.	Try Different Colours:
+	For each colour from 1 to m:
+1.	Check if assigning the current colour to the current node is valid using is_safe(node, colour).
+2.	If valid:
+a.	Assign the colour to the current node.
+b.	Recursively call map_ colouring, where next_ node is the next uncoloured node.
+c.	If the recursive call returns True, propagate that result back up.
+d.	If not, backtrack by removing the colour assignment 
+4. Driver Function
+1. Define a function solve_ map_ colouring that:
+  a.Initialize the colour list.
+  b.Call map_ colouring where start_ node is the first region of the map.
+  c.If the call returns True, print the colours assigned to each node; otherwise, print that no solution exists.
 ![map coluring](https://github.com/user-attachments/assets/0be5e258-7236-4167-a798-299b896755f1)
 
 
+
+
+
+
+
+
+
+
+Travelling Salesman problem:
+Algorithm:
+1. Initialization
+•	Create a list or matrix to represent the distances between cities.
+•	Initialize a variable to store the minimum cost (or distance).
+•	Create a path list to keep track of the current path.
+2. Backtracking Function
+1.	Define a recursive function tsp (current_city, visited, path, current_cost) that:
+o	Base Case:
+	If all cities have been visited, add the cost to return to the starting city. If this cost is less than the current minimum, update the minimum cost and the best path.
+o	Recursive Case:
+	For each city, if it hasn't been visited:
+	Mark it as visited.
+	Add the cost to reach this city to the current cost.
+	Add this city to the current path.
+	Recursively call tsp for the next city.
+	Backtrack by unmarking the city and removing it from the current path.
+3. Driver Function
+1. Define a function solve_ tsp(distances) that:
+                            a. Initialize the visited list, path, and current cost.
+                            b. Call the backtracking function starting from the first city.
+                            c. Print the minimum cost and the best path found.
+
+![tsp AI](https://github.com/user-attachments/assets/2cb2ff91-bbd4-4c2d-8b8b-d3047a62f637)
 
 
