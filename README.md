@@ -1,4 +1,4 @@
-![8 queens AI](https://github.com/user-attachments/assets/6f199de9-75e1-43ee-bb54-a5ac9a9a5259)8 Queens problem:
+8 Queens problem:
 Algorithm:
 1. Create an 8x8 chessboard. Start with the first row and no queens placed on the board for each column in the current row, try to place a queen.
 2. For each placement, check if placing a queen in the current column of the current row is valid.
@@ -10,6 +10,9 @@ Algorithm:
 6. If no column is valid, return to the previous row and move the queen placed there to the next column.
 7. If queens are successfully placed in all 8 rows, a solution is found.
 8. Continue the process until all possible placements are tried or a solution is found.
+![8 queens AI](https://github.com/user-attachments/assets/6f199de9-75e1-43ee-bb54-a5ac9a9a5259)
+
+
 
 
 Water Jug Problem:
@@ -28,7 +31,9 @@ e.	Pour Jug A to Jug B: Calculate the new state based on how much can be poured.
 f.	Pour Jug B to Jug A: Similarly, calculate the new state.
 7. Maintain a set to keep track of visited states to avoid processing the same state multiple times.
 8. If the queue becomes empty without finding a solution, print that no solution exists.
-9. ![water jug AI](https://github.com/user-attachments/assets/c2f5b7a6-4578-405d-bf69-081c58bcbbba)
+![water jug AI](https://github.com/user-attachments/assets/c2f5b7a6-4578-405d-bf69-081c58bcbbba)
+
+
 
 
 
@@ -44,7 +49,9 @@ Algorithm:
 8. Substitute the digits into the original equation to see if it holds true. Ensure that all digits are unique and follow the puzzle’s constraints.
 9. If the trial doesn’t work, adjust the digit assignments and try again keep refining the approach based on results and logical deductions.
 10. Once you find a solution, verify it by substituting all letters with their corresponding digits in the original equation ensure that there are no violations of constraints.
-11. ![crypto arithmetic](https://github.com/user-attachments/assets/cab760ab-37da-420f-9e6e-d6faca8c4fd8)
+ ![crypto arithmetic](https://github.com/user-attachments/assets/cab760ab-37da-420f-9e6e-d6faca8c4fd8)
+
+
 
 
 
@@ -61,6 +68,8 @@ Algorithm:
 
 
 
+
+
 Depth first Search:
 Algorithm:
 1. Create an empty set visited to keep track of visited nodes.
@@ -73,63 +82,37 @@ Algorithm:
 	If the node is not in visited:
 7. Mark it as visited. Append it to traversal_ order. Push all unvisited neighbors of the node onto the stack .
 8. Return the traversal_order list.
-9. ![DFS AI](https://github.com/user-attachments/assets/d5788872-38e5-48cf-a0b4-b386f2349ca1)
+![DFS AI](https://github.com/user-attachments/assets/d5788872-38e5-48cf-a0b4-b386f2349ca1)
+
+
+
 
 
 
 A*
-Alogorithm:
-•	Create Open and Closed Sets:
-o	Open Set: A priority queue or min-heap containing nodes to be evaluated, initialized with the start node.
-o	Closed Set: A set of nodes that have already been evaluated.
-•	Initialize Costs:
-o	g_cost for each node: The cost from the start node to the current node.
-o	f_cost for each node: The estimated total cost (g_cost + h_cost).
-o	h_cost: The heuristic estimate from the current node to the goal node.
-•	Set Start Node Costs:
-o	g_cost of the start node to 0.
-o	f_cost of the start node to its h_cost.
-2.Algorithm Execution:
-•	While the Open Set is not Empty:
-1.	Select the Node with the Lowest f_cost:
-	Dequeue the node with the lowest f_cost from the Open Set. This node is called current_node.
-2.	Check for Goal:
-	If current_node is the goal node, reconstruct the path from start to goal and return it.
-3.	Move Node to Closed Set:
-	Add current_node to the Closed Set.
-4.	Evaluate Neighbors:
-	For each neighbor of current_node:	If the Neighbor is in the Closed Set:
-	Skip it as it has already been evaluated.
-	Calculate Costs:
-	Calculate the tentative g_cost (i.e., g_cost of current_node plus the cost to reach the neighbor).
-	If the neighbor is not in the Open Set or the new g_cost is lower than its current g_cost:
-	Update the g_cost and f_cost of the neighbor.
-	Set the current_node as the parent of the neighbor (for path reconstruction).
-	If the neighbor is not in the Open Set, add it to the Open Set.
-5.	Continue Until Path is Found or Open Set is Empty:
-	If the Open Set becomes empty without finding the goal, report that there is no path.
-3.Path Reconstruction:
-•	Once the goal node is reached, reconstruct the path from the start node to the goal node by following parent pointers from the goal node back to the start node.
+Algorithm:
+1. Start at a given position on the grid.
+2. If the current cell is dirty, clean it.
+3. Choose the next cell to move to. Options include:
+4. Move to the nearest dirty cell.
+5. Move in a specific pattern (e.g., zig-zag) to ensure coverage.
+6. Use a combination of both strategies for optimal cleaning.
+7. Move the vacuum cleaner to the chosen cell.
+8. Go back to step 2 until all cells are clean.
 ![A AI](https://github.com/user-attachments/assets/69d8a911-446f-48cc-a639-573ce9fecf1a)
 
 
-Graph colouring:
+
+
+
+Map colouring:
 Algorithm:
-Create a data structure (e.g., a list) to store the color assigned to each node. Initially, no colors are assigned (e.g., all values are 0).
-Choose the number of colors m to use for coloring the map
-Create a function is_safe(node, color) that checks whether it is safe to assign a particular color to node.
-The function ensures that none of the node’s neighbors (connected nodes) have the same color.
-Backtracking Algorithm to Assign Colors
-Start at the first node.
-For each node, try assigning each color from 1 to m.
-Check if the Color is Valid: Use the is_safe function to check whether the color can be assigned to the current node without conflict.
-Recursive Call: If the color is valid, assign it to the node and recursively call the function for the next node.
-Backtrack: If assigning a color to a node leads to a conflict later, reset the color of the current node (backtrack) and try a different color.
-If all nodes are colored successfully, return the color assignments. If no solution is possible, backtrack to the previous node and try again.
-The algorithm terminates when either:
-All nodes are successfully assigned colors (in which case, a valid coloring is found).
-No valid color assignments are possible, meaning the map cannot be colored with the given number of colors.
-![Uploading graph colouring.jpeg…]()
+1.Start from the initial node and enqueue it into the queue.
+2.While the queue is not empty, dequeue a node and process it.
+3.Enqueue all unvisited neighbors of the dequeued node.
+4.Repeat steps 2 and 3 until the queue is empty.
+![map coluring](https://github.com/user-attachments/assets/0be5e258-7236-4167-a798-299b896755f1)
+
 
 
 
