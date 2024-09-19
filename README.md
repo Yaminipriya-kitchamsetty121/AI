@@ -20,6 +20,8 @@ Algorithm:
 
 
 
+
+
 Water Jug Problem:
 Algorithm:
 1. Define a state by the amount of water in both jugs (x, y), where x is the amount of water in jug A    and y is the amount of water in jug B. 
@@ -37,6 +39,8 @@ f.	Pour Jug B to Jug A: Similarly, calculate the new state.
 7. Maintain a set to keep track of visited states to avoid processing the same state multiple times.
 8. If the queue becomes empty without finding a solution, print that no solution exists.
 ![water jug AI](https://github.com/user-attachments/assets/c2f5b7a6-4578-405d-bf69-081c58bcbbba)
+
+
 
 
 
@@ -70,6 +74,7 @@ Algorithm:
 
 
 
+
 Breadth first search:
 Algorithm:
 1. Create an empty set visited to keep track of visited nodes.
@@ -91,6 +96,7 @@ Algorithm:
 
 
 
+
 Depth first Search:
 Algorithm:
 1. Create an empty set visited to keep track of visited nodes.
@@ -99,8 +105,8 @@ Algorithm:
 4. Call dfs(start) to begin the traversal from the start node. Return the traversal_ order list.
 5. Create an empty set visited to keep track of visited nodes.
 6. Initialize a stack with the start node to create an empty list traversal_ order to store the order of nodes visited. While the stack is not empty:
-	Pop a node from the stack.
-	If the node is not in visited:
+    ->Pop a node from the stack.
+    ->If the node is not in visited:
 7. Mark it as visited. Append it to traversal_ order. Push all unvisited neighbors of the node onto the stack .
 8. Return the traversal_order list.
 ![DFS AI](https://github.com/user-attachments/assets/d5788872-38e5-48cf-a0b4-b386f2349ca1)
@@ -143,20 +149,20 @@ Algorithm:
                     ->If any adjacent node has the same colour, return False. Otherwise, return True.
 5. Define a recursive function map_ colouring that:
 1.	Base Case:
-	If all nodes have been assigned a colour, return True (solution found).
+       ->	If all nodes have been assigned a colour, return True (solution found).
 2.	Try Different Colours:
-	For each colour from 1 to m:
+   For each colour from 1 to m:
 1.	Check if assigning the current colour to the current node is valid using is_safe(node, colour).
 2.	If valid:
-a.	Assign the colour to the current node.
-b.	Recursively call map_ colouring, where next_ node is the next uncoloured node.
-c.	If the recursive call returns True, propagate that result back up.
-d.	If not, backtrack by removing the colour assignment 
+        a.	Assign the colour to the current node.
+        b.	Recursively call map_ colouring, where next_ node is the next uncoloured node.
+        c.	If the recursive call returns True, propagate that result back up.
+        d.	If not, backtrack by removing the colour assignment 
 4. Driver Function
-1. Define a function solve_ map_ colouring that:
-  a.Initialize the colour list.
-  b.Call map_ colouring where start_ node is the first region of the map.
-  c.If the call returns True, print the colours assigned to each node; otherwise, print that no solution exists.
+      1. Define a function solve_ map_ colouring that:
+            a.Initialize the colour list.
+            b.Call map_ colouring where start_ node is the first region of the map.
+            c.If the call returns True, print the colours assigned to each node; otherwise, print that no solution exists.
 ![map coluring](https://github.com/user-attachments/assets/0be5e258-7236-4167-a798-299b896755f1)
 
 
@@ -172,22 +178,22 @@ d.	If not, backtrack by removing the colour assignment
 Travelling Salesman problem:
 Algorithm:
 1. Initialization
-•	Create a list or matrix to represent the distances between cities.
-•	Initialize a variable to store the minimum cost (or distance).
-•	Create a path list to keep track of the current path.
+  ->	Create a list or matrix to represent the distances between cities.
+  ->Initialize a variable to store the minimum cost (or distance).
+  ->Create a path list to keep track of the current path.
 2. Backtracking Function
-1.	Define a recursive function tsp (current_city, visited, path, current_cost) that:
-o	Base Case:
-	If all cities have been visited, add the cost to return to the starting city. If this cost is less than the current minimum, update the minimum cost and the best path.
-o	Recursive Case:
-	For each city, if it hasn't been visited:
-	Mark it as visited.
-	Add the cost to reach this city to the current cost.
-	Add this city to the current path.
-	Recursively call tsp for the next city.
-	Backtrack by unmarking the city and removing it from the current path.
+       1.	Define a recursive function tsp (current_city, visited, path, current_cost) that:
+Base Case:
+   ->If all cities have been visited, add the cost to return to the starting city. If this cost is less than the current minimum, update the minimum cost and the best path.
+Recursive Case:
+     ->	For each city, if it hasn't been visited:
+     ->	Mark it as visited.
+     ->	Add the cost to reach this city to the current cost.
+     ->	Add this city to the current path.
+     ->	Recursively call tsp for the next city.
+     -> Backtrack by unmarking the city and removing it from the current path.
 3. Driver Function
-1. Define a function solve_ tsp(distances) that:
+          1. Define a function solve_ tsp(distances) that:
                             a. Initialize the visited list, path, and current cost.
                             b. Call the backtracking function starting from the first city.
                             c. Print the minimum cost and the best path found.
@@ -256,10 +262,10 @@ Alogorithm:
 Alpha,Beta:
 Algorithm:
 1.Initialization:
-•	Set two values, alpha and beta. Alpha is the best value that the maximizer currently can guarantee at that level or above (initially set to negative infinity). Beta is the best value that the minimizer currently can guarantee at that level or above (initially set to positive infinity).
+  ->	Set two values, alpha and beta. Alpha is the best value that the maximizer currently can guarantee at that level or above (initially set to negative infinity). Beta is the best value that the minimizer currently can guarantee at that level or above (initially set to positive infinity).
 2.Recursive Search:
-•	Traverse the tree recursively, alternating between maximizing and minimizing players.
-•	At each node:
+   ->	Traverse the tree recursively, alternating between maximizing and minimizing players.
+   -> At each node:
 1.	If the node is a maximizing node:
 ->Update alpha with the maximum value between alpha and the value of the current node.
 ->If alpha is greater than or equal to beta, prune the remaining branches (return the value).
@@ -267,7 +273,7 @@ Algorithm:
 ->Update beta with the minimum value between beta and the value of the current node.
 ->If beta is less than or equal to alpha, prune the remaining branches (return the value).
 3.Return the Value:
-•	Once all nodes are evaluated, return the optimal value for the player at the root node.
+ ->	Once all nodes are evaluated, return the optimal value for the player at the root node.
 ![alpha beta](https://github.com/user-attachments/assets/7e72ddaf-b37b-4ec1-94a4-d34865114c01)
 
 
