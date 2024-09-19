@@ -1,3 +1,4 @@
+PYTHON PROGRAMS:
 8 Queens problem:
 Algorithm:
 1. Create an 8x8 chessboard. Start with the first row and no queens placed on the board for each column in the current row, try to place a queen.
@@ -373,6 +374,15 @@ Algorithm:
 
 
 
+PROLOG PROGRAMS:
+Sum the Integers:
+Algorithm:
+1. If the list is empty, return 0.
+2. Split the list into the first element (head) and the rest of the list (tail).
+3. Recursively call the sum function on the tail to get the sum of the remaining elements.
+4. Add the head to the sum obtained from the tail.
+5. Return the total sum.
+![sum prolog AI](https://github.com/user-attachments/assets/7badc5b2-5705-4823-aa4b-6914b63737ee)
 
 
 
@@ -381,5 +391,260 @@ Algorithm:
 
 
 
+
+
+
+
+A DB program:
+Algorithm:
+% Define the database of names and DOBs
+person('Alice', '1990-05-15').
+person('Bob', '1985-07-22').
+person('Charlie', '1992-11-30').
+person('David', '1988-03-05').
+person('Eve', '1995-12-10').
+% Query the database
+% dob/2: Finds the date of birth of a person.
+% dob(+Name, -DOB)
+dob(Name, DOB) :-
+    person(Name, DOB).  % Look up the person's DOB in the database.
+% Example usage:
+% ?- dob('Alice', DOB).
+% DOB = '1990-05-15'.
+![DB AI](https://github.com/user-attachments/assets/4730c2f2-fbbf-4b42-b1be-f1b8b6966ac5)
+
+
+
+
+
+
+
+
+
+
+
+
+Teacher_Student:
+Algorithm:
+% Define the database with facts
+% student(Name, SubjectCode)
+student('Alice', 'CS101').
+student('Bob', 'CS102').
+student('Charlie', 'CS101').
+student('David', 'CS103').
+student('Eve', 'CS102').
+% teacher(Name, SubjectCode)
+teacher('Prof. Smith', 'CS101').
+teacher('Prof. Johnson', 'CS102').
+teacher('Dr. Brown', 'CS103').
+% Query to find all subjects a student is enrolled in
+% student_subjects/2: finds all subject codes for a student
+% student_subjects(+StudentName, -SubjectCode)
+student_subjects(StudentName, SubjectCode) :-
+    student(StudentName, SubjectCode).
+% Query to find all subjects a teacher teaches
+% teacher_subjects/2: finds all subject codes for a teacher
+% teacher_subjects(+TeacherName, -SubjectCode)
+teacher_subjects(TeacherName, SubjectCode) :-
+    teacher(TeacherName, SubjectCode).
+% Example usage:
+% ?- student_subjects('Alice', SubjectCode).
+% SubjectCode = 'CS101'.
+% 
+% ?- teacher_subjects('Prof. Johnson', SubjectCode).
+% SubjectCode = 'CS102'.
+![student prolog](https://github.com/user-attachments/assets/250ed56a-72bb-461b-b391-9579fa5c77dc)
+
+
+
+
+
+
+
+
+
+
+
+
+Planets:
+Algorithm:
+% Database of planets with names, types, and distances from the sun
+planet(mercury, rocky, 0.39).
+planet(venus, rocky, 0.72).
+planet(earth, rocky, 1.00).
+planet(mars, rocky, 1.52).
+planet(jupiter, gas_giant, 5.20).
+planet(saturn, gas_giant, 9.58).
+planet(uranus, gas_giant, 19.22).
+planet(neptune, gas_giant, 30.05).
+% Predicate to query planets of a specific type
+planets_of_type(Type, Planets) :-
+    findall(Name, planet(Name, Type, _), Planets).
+% Predicate to query planets within a specific distance range
+planets_within_distance(Min, Max, Planets) :-
+    findall(Name, (planet(Name, _, Distance), Distance >= Min, Distance <= Max), Planets).
+% Example queries
+?- planets_of_type(rocky, RockyPlanets).
+RockyPlanets = [mercury, venus, earth, mars].
+?- planets_within_distance(5, 20, NearbyPlanets).
+NearbyPlanets = [jupiter, saturn, uranus].
+?- planet(Name, Type, Distance), Distance > 10.
+Name = uranus,
+Type = gas_giant,
+Distance = 19.22 ;
+Name = neptune,
+Type = gas_giant,
+Distance = 30.05.
+![planets](https://github.com/user-attachments/assets/ea072db1-b240-4944-9ee5-63014908acc3)
+
+
+
+
+
+
+
+
+
+
+
+
+Towers of Hanoi:
+Algorithm:
+1. The base case for solving the Towers of Hanoi with one disk is to directly move the disk from the source peg to the destination peg.
+2. For `N` disks, we can recursively solve it by following these steps:
+   - Move `N-1` disks from the source peg to the auxiliary peg, using the destination peg as the auxiliary.
+   - Move the `N`-th disk from the source peg to the destination peg.
+   - Move the `N-1` disks from the auxiliary peg to the destination peg, using the source peg as the auxiliary.
+![tower](https://github.com/user-attachments/assets/ad6b0484-e558-4556-b91b-fc3094cc4d27)
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bird:
+Algorithm:
+1. Define a set of facts describing various bird species and their characteristics, including whether they can fly.
+2. Create a predicate `can_fly/1` that checks if a given bird can fly based on its characteristics.
+![bird](https://github.com/user-attachments/assets/eb62b969-da16-4d38-b6a6-00a30d203ae0)
+
+
+
+
+
+
+
+
+
+
+
+
+Family tree:
+Algorithm:
+1. Define facts for individuals in the family with their relationships.
+2. Define rules for different relationships like parent, child, and sibling.
+3. Utilize the defined facts and rules to answer queries about the family relationships.
+![family](https://github.com/user-attachments/assets/856419e1-b92e-423c-9e2f-77e82c12f1ea)
+
+
+
+
+
+
+
+
+
+
+Diet:
+Algorithm:
+1. Define facts for various diseases and their corresponding dietary recommendations.
+2. Create rules that suggest a diet based on the disease.
+3. Utilize the facts and rules to answer queries about diet recommendations for specific diseases.
+![diet](https://github.com/user-attachments/assets/9f9ba144-4e48-4122-ac58-06e41f7a1ce0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+MOnkey Problem Problem:
+Algorithm:
+1. Define the initial state of the monkey, banana, and box positions.
+2. Define predicates for actions like `move`, `climb`, `push`, and `grasp` which change the state of the monkey and the box.
+3. Create a predicate `solve` which specifies a sequence of actions to move the monkey to the banana and then to the box with the banana.
+![monkey](https://github.com/user-attachments/assets/439d338f-3a15-4e6f-a262-eeffd37a10b5)
+
+
+
+
+
+
+
+
+
+
+
+Fruit:
+Algorithm:
+1. Define facts about various fruits and their colors.
+2. Use backtracking to query and retrieve the color of a specific fruit.
+![fruit](https://github.com/user-attachments/assets/6f585875-0256-4178-b691-f84a4607987e)
+
+
+
+
+
+
+
+
+
+
+
+
+BFS:
+Algorithm:
+1. Define facts for the graph's edges and their costs.
+2. Implement the Best First Search algorithm using a priority queue.
+   - Initialize an empty priority queue with the start node and its cost.
+   - While the priority queue is not empty:
+     - Pop the node with the lowest cost from the priority queue.
+     - If the popped node is the goal node, return success.
+     - Otherwise, expand the current node by generating its successors.
+     - For each successor, calculate the cost and add it to the priority queue.
+3. If the priority queue becomes empty without reaching the goal node, return failure.
+![breadthfirstsearch](https://github.com/user-attachments/assets/506e6631-4d59-4b62-8793-97e5a993bbd2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+Disease:
+Algorithm:
+1. Define facts for symptoms and diseases. Each symptom is associated with one or more diseases.
+2. Define rules to diagnose diseases based on symptoms.
+3. Use backtracking to find all possible diseases that match the given symptoms.
+![disease AI](https://github.com/user-attachments/assets/3cd75b82-2f45-49be-b735-aa79174c79c2)
 
 
