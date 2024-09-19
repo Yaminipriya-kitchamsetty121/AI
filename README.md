@@ -239,7 +239,8 @@ Alogorithm:
 5. The identical property value applies to each of the tuples.
                ->There aren't any more qualities left.
                 ->There aren't any more occurrences.
-![Uploading DT AI.jpg…]()
+![DT AI](https://github.com/user-attachments/assets/2616b053-a762-4c0e-82f5-4cac9fe8b365)
+
 
 
 
