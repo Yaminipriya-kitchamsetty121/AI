@@ -15,6 +15,11 @@ Algorithm:
 
 
 
+
+
+
+
+
 Water Jug Problem:
 Algorithm:
 1. Define a state by the amount of water in both jugs (x, y), where x is the amount of water in jug A    and y is the amount of water in jug B. 
@@ -32,6 +37,11 @@ f.	Pour Jug B to Jug A: Similarly, calculate the new state.
 7. Maintain a set to keep track of visited states to avoid processing the same state multiple times.
 8. If the queue becomes empty without finding a solution, print that no solution exists.
 ![water jug AI](https://github.com/user-attachments/assets/c2f5b7a6-4578-405d-bf69-081c58bcbbba)
+
+
+
+
+
 
 
 
@@ -55,6 +65,11 @@ Algorithm:
 
 
 
+
+
+
+
+
 Breadth first search:
 Algorithm:
 1. Create an empty set visited to keep track of visited nodes.
@@ -65,6 +80,12 @@ Algorithm:
 6. If this node hasn't been visited mark it as visited and add it to traversal_ order. Enqueue all its unvisited neighbours.
 7.Return the traversal_ order list, which contains nodes in the order they were visited.
 ![BFS AI](https://github.com/user-attachments/assets/4f752913-e7f3-4b3f-93ce-d4b7ee2b7fcc)
+
+
+
+
+
+
 
 
 
@@ -89,6 +110,9 @@ Algorithm:
 
 
 
+
+
+
 A*:
 Algorithm:
 1. Initialize the Open Set with the start node and the Closed Set as empty.
@@ -99,6 +123,8 @@ Algorithm:
 6. For each neighbour, calculate the g, h, and f values, and update as needed.
 7. Return the path if the goal is reached, otherwise indicate that no path exists.
 ![A AI](https://github.com/user-attachments/assets/69d8a911-446f-48cc-a639-573ce9fecf1a)
+
+
 
 
 
@@ -142,6 +168,7 @@ d.	If not, backtrack by removing the colour assignment
 
 
 
+
 Travelling Salesman problem:
 Algorithm:
 1. Initialization
@@ -175,6 +202,8 @@ o	Recursive Case:
 
 
 
+
+
 Tic_Tac-Toe:
 Algorithm:
 1. Initialize the game board (3x3 grid) with empty spaces.
@@ -199,6 +228,8 @@ Algorithm:
 
 
 
+
+
 Decision Tree:
 Alogorithm:
 1.start the program.
@@ -209,6 +240,137 @@ Alogorithm:
                ->There aren't any more qualities left.
                 ->There aren't any more occurrences.
 ![Uploading DT AI.jpg…]()
+
+
+
+
+
+
+
+
+
+
+
+
+Alpha,Beta:
+Algorithm:
+1.Initialization:
+•	Set two values, alpha and beta. Alpha is the best value that the maximizer currently can guarantee at that level or above (initially set to negative infinity). Beta is the best value that the minimizer currently can guarantee at that level or above (initially set to positive infinity).
+2.Recursive Search:
+•	Traverse the tree recursively, alternating between maximizing and minimizing players.
+•	At each node:
+1.	If the node is a maximizing node:
+->Update alpha with the maximum value between alpha and the value of the current node.
+->If alpha is greater than or equal to beta, prune the remaining branches (return the value).
+2.If the node is a minimizing node:
+->Update beta with the minimum value between beta and the value of the current node.
+->If beta is less than or equal to alpha, prune the remaining branches (return the value).
+3.Return the Value:
+•	Once all nodes are evaluated, return the optimal value for the player at the root node.
+![alpha beta](https://github.com/user-attachments/assets/7e72ddaf-b37b-4ec1-94a4-d34865114c01)
+
+
+
+
+
+
+
+
+
+
+
+
+Feed Forward Netrual Network:
+Algorithm:
+1. start the program 
+2. The input layer comprises neurons that receive input.
+3. The hidden layer contains a large number of neurons that modify the inputs and interact with the output layer.
+4. The output layer contains the result of the computation.
+![FFNN AI](https://github.com/user-attachments/assets/7ab6ffa7-8efd-4cf3-8128-19e0cd839cf9)
+
+
+
+
+
+
+
+
+
+
+
+
+
+8 Puzzle:
+Algorithm:
+1. Represent the puzzle as a 3x3 grid, where each cell contains a number (1-8) or is empty (0).
+2. Each node in the search tree represents a state of the puzzle. It contains the current state, the previous state (parent), the move that led to this state, and the cost (usually the sum of the path cost and a heuristic estimate).
+ 3. Choose a heuristic function that estimates the cost from the current state to the goal state. A common heuristic for the 8-puzzle is the Manhattan distance, which is the sum of the horizontal and vertical distances of each tile to its correct position.
+4.  Use a priority queue (e.g., a min-heap) to store nodes during the search. Nodes are dequeued based on their total cost (p222ath cost + heuristic cost).
+5. a. Initialize the priority queue with the initial state. 
+    b. While the priority queue is not empty:
+                    i. Dequeue the node with the lowest total cost.
+                    ii. If the current state is the goal state, the solution is found.
+                    iii. Generate successor states by moving the empty space in all possible directions (up, down, left, right). 
+                      iv. For each successor state: - Calculate the cost (path cost + heuristic cost).
+6.Once the goal state is reached, follow the parent pointers from the goal node to the initial node to extract the sequence of moves that lead to the solution.
+![8 puzzle AI](https://github.com/user-attachments/assets/d9c65fb9-e488-4f83-85c9-61379e6e4d01)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Missionaries:
+Algorithm:
+1. One way to solve the Missionaries and Cannibals problem is to use a variation of the Breadth-First Search (BFS) algorithm.
+2. The idea is to represent the states of the problem (the number of missionaries and cannibals on each side of the river and the boat's location) as nodes in a graph.
+3. Then, by systematically exploring the graph using BFS, you can find a valid sequence of moves that solves the problem.
+![missionaries AI](https://github.com/user-attachments/assets/b35a0d1e-52ed-4989-8ef3-a5a1dddbfc19)
+
+
+
+
+
+
+
+
+
+
+
+Vacuum Cleaner:
+Algorithm:
+1. Start at a given position on the grid.
+2. If the current cell is dirty, clean it.
+3. Choose the next cell to move to. Options include:
+4. Move to the nearest dirty cell.
+5. Move in a specific pattern (e.g., zig-zag) to ensure coverage.
+6. Use a combination of both strategies for optimal cleaning.
+7. Move the vacuum cleaner to the chosen cell.
+8. Go back to step 2 until all cells are clean.
+![vaccum cleaner AI](https://github.com/user-attachments/assets/15dff980-d5bc-4bf1-9f77-57717d2ebc6d)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
